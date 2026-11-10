@@ -1,0 +1,9 @@
+{
+  "template": "minecraft:coal",
+  "components": {
+    "minecraft:cooking_fuel": {
+      "burn_time": 4800,
+      "speed_multiplier": 2.0
+    }
+  }
+}

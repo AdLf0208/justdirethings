@@ -1,0 +1,20 @@
+[package]
+# Ported from: Just Dire Things 1.5.7 (Direwolf20-MC/JustDireThings, MIT),
+# Minecraft Java 1.21.1 NeoForge. Clean-room Rust rewrite. Local-only until the
+# maintainer approves publishing (ARCHITECTURE.md §8).
+name = "horizon-justdirethings"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.95"
+license = "MIT"
+description = "Just Dire Things for Horizon, slice 1: the Simple Coal Generator and its fuels"
+
+[lib]
+# This exact source is also injected as a same-crate module by horizon-mixins.
+path = "mixins/justdirethings/runtime.rs"
+
+[dependencies]
+
+[workspace]
+members = ["tools/audit"]
+resolver = "2"

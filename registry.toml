@@ -1,0 +1,49 @@
+id = "justdirethings"
+kind = "native-mod"
+name = "justdirethings"
+summary = "A Horizon port of justdirethings."
+description = """
+A port of [justdirethings](Direwolf20-MC/JustDireThings) for Horizon.
+
+**Implemented so far**
+
+- The Simple Coal Generator (`justdirethings:generatort1`) and the four coals it
+- burns (`coal_t1..t4`).** It is the smallest machine family in the jar that the pin
+- expresses end to end: one block, one insert-only FE buffer, one fuel slot, one
+- tick, no neighbour reads, no GUI needed to prove it, no fluid and no entity. It
+- is also the pack's first power source, so later slices (the Energy Transmitter,
+- the Fuel Generator, the pocket generator, item automation) build on it. The jar
+- inventory behind the choice, and the other families it ships, are in
+- `FINDINGS.md`.
+
+**Not yet ported**
+
+- Push-out to neighbours** (`providePowerAdjacent`, `fePerTick × 10` per side).
+- API 142 gives `native_move_energy`; the sink is the Energy Transmitter.
+- No GUI/menu.** Upstream opens `GeneratorT1Screen`; this slice has no menu
+- type, so right-click does nothing and the fields are read by command.
+- The Fuel Generator** (`generatorfluidt1`): 5,000,000 FE buffer, 5,000 FE/t,
+- tiered fuel fluids (`fuel_tier2/3/4_fe_per_mb` 450/1300/4000). Needs
+- `block_entity_fluids` tanks and a fluid capability.
+- The Energy Transmitter** (`energytransmitter`): the network, per-side
+
+Original copyright and licence notices are kept in this repository. Pinned to
+Horizon 1d63e0a and horizon-mixins 5a64af93. Help with the remaining slices is
+welcome.
+"""
+authors = ["AdLf0208"]
+owners = ["AdLf0208"]
+owner_ids = [107615167]
+license = "MIT"
+source = "https://github.com/AdLf0208/justdirethings"
+icon = "icons/justdirethings.png"
+categories = ["utility"]
+tags = ["port", "horizon"]
+
+[[versions]]
+version = "0.1.0"
+published = "2026-11-10"
+game = "26.3"
+file = "justdirethings.hnmod"
+sha256 = "31d5f91fe360150692a74df75c4c72fc3e94f5f8efff753761a8bc4a482ecce7"
+changelog = "First release"
